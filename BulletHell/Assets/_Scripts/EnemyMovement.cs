@@ -6,11 +6,12 @@ public class EnemyMovement : MonoBehaviour
 {
 
     public Transform player;
+    public Transform Self;
     public float AttackRange;
     public float distance;
     public float speed;
     Vector3 smoothpos;
-    Animator anim;
+    public EnemyType E_Type;
 
 
     public enum State { move, attack }
@@ -21,45 +22,37 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         smoothpos = transform.position;
-        anim = GetComponent<Animator>();
+        Self = transform.GetChild(0);
+        E_Type = Self.GetComponent<EnemyType>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.LookAt(player);
-        distance = Vector3.Distance(transform.position, player.position);
+        Self.transform.LookAt(player);
+        distance = Vector3.Distance(Self.transform.position, player.position);
 
         if (EnemyState == State.move)
         {
             if (distance > AttackRange)
             {
-                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("attack3"))
-                {
-                    transform.Translate(Vector3.forward * speed * Time.deltaTime);
-                }
-                anim.SetBool("isWalking", true);
+                    Self.transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
             else
             {
                 
                 EnemyState = State.attack;
+
             }
         }
         else if(EnemyState == State.attack)
         {
             if(distance > AttackRange)
             {
-                
                 EnemyState = State.move;
-                anim.SetBool("Attack", false);
-            }
-            else
-            {
-                anim.SetBool("isWalking", false);
-                anim.SetBool("Attack", true);
+
             }
         }
     }
-    
 }

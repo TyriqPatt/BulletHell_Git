@@ -12,14 +12,17 @@ public class EnemyType : MonoBehaviour
     public Rigidbody Rig;
     public List<GameObject> BulletList = new List<GameObject>();
     public GameObject DashSawPart;
-    public enum State {Shotgun, FourShot, BuzzSaw, DashSaw, Sniper}
+    public enum State {Shotgun, BurstShot, BuzzSaw, DashSaw, Sniper}
 
     public State EnemyTypes;
 
     // Start is called before the first frame update
     void Start()
     {
-        DashSawPart.SetActive(false);
+        if (EnemyTypes == State.DashSaw)
+        {
+            DashSawPart.SetActive(false);
+        }
         Rig = GetComponent<Rigidbody>();
         for (int i = 0; i < BulletsSpawned; i++)
         {
