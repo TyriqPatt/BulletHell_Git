@@ -479,7 +479,7 @@ Transform:
   m_GameObject: {fileID: 566977525}
   m_LocalRotation: {x: 0, y: -0.00000077486027, z: -0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4864907631062436875}
   m_RootOrder: 0
@@ -5294,6 +5294,36 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &667523227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 667523228}
+  m_Layer: 0
+  m_Name: Eye (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &667523228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667523227}
+  m_LocalRotation: {x: 0, y: 0.043619405, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4864907631062436875}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 5, z: 0}
 --- !u!1 &847702003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 847702003, guid: 2f7052c2fb194ac4db783b7cdb160e41,
@@ -10454,6 +10484,36 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1172300132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1172300133}
+  m_Layer: 0
+  m_Name: Eye (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1172300133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172300132}
+  m_LocalRotation: {x: 0, y: -0.043619405, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4864907631062436875}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: -5, z: 0}
 --- !u!1 &1247949078
 GameObject:
   m_ObjectHideFlags: 0
@@ -10581,7 +10641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1305320586
 Transform:
   m_ObjectHideFlags: 0
@@ -10632,7 +10692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1314661313
 Transform:
   m_ObjectHideFlags: 0
@@ -20864,12 +20924,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eye: {fileID: 1581461291}
+  eye1: {fileID: 0}
+  eye2: {fileID: 0}
   Bullet: {fileID: 6915964390157666991, guid: a9fcc766dabdd0b4e822f30c23abedad, type: 3}
   BulletsSpawned: 7
   AltAmmo: 0
   Rig: {fileID: 0}
   BulletList: []
-  DashSawPart: {fileID: 0}
+  DashSawPart: {fileID: 451426852}
   EnemyTypes: 3
 --- !u!135 &3365469447289439522
 SphereCollider:
@@ -44887,6 +44949,8 @@ Transform:
   m_LocalScale: {x: 0.16666667, y: 0.16666667, z: 0.16666667}
   m_Children:
   - {fileID: 566977526}
+  - {fileID: 1172300133}
+  - {fileID: 667523228}
   m_Father: {fileID: 256541590}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180.00002, z: 0}
@@ -44924,6 +44988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eye: {fileID: 566977526}
+  eye1: {fileID: 1172300133}
+  eye2: {fileID: 667523228}
   Bullet: {fileID: 6915964390157666991, guid: a9fcc766dabdd0b4e822f30c23abedad, type: 3}
   BulletsSpawned: 7
   AltAmmo: 0
@@ -45105,6 +45171,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eye: {fileID: 2115639489}
+  eye1: {fileID: 0}
+  eye2: {fileID: 0}
   Bullet: {fileID: 6915964390157666991, guid: a9fcc766dabdd0b4e822f30c23abedad, type: 3}
   BulletsSpawned: 7
   AltAmmo: 4
@@ -45204,6 +45272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eye: {fileID: 187700765}
+  eye1: {fileID: 0}
+  eye2: {fileID: 0}
   Bullet: {fileID: 6915964390157666991, guid: a9fcc766dabdd0b4e822f30c23abedad, type: 3}
   BulletsSpawned: 7
   AltAmmo: 7

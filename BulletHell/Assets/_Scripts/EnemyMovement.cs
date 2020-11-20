@@ -13,8 +13,7 @@ public class EnemyMovement : MonoBehaviour
     Vector3 smoothpos;
     public EnemyType E_Type;
 
-
-    public enum State { move, attack }
+    public enum State { move, attack, idle}
 
     public State EnemyState;
 
@@ -32,7 +31,6 @@ public class EnemyMovement : MonoBehaviour
     {
         Self.transform.LookAt(player);
         distance = Vector3.Distance(Self.transform.position, player.position);
-
         if (EnemyState == State.move)
         {
             if (distance > AttackRange)
@@ -48,11 +46,27 @@ public class EnemyMovement : MonoBehaviour
         }
         else if(EnemyState == State.attack)
         {
-            if(distance > AttackRange)
+            if(E_Type.EnemyTypes == EnemyType.State.BurstShot)
             {
-                EnemyState = State.move;
+                E_Type.CallBurst();
+                EnemyState = State.idle;
+            }
+
+            if (E_Type.EnemyTypes == EnemyType.State.DashSaw)
+            {
+                E_Type.CallDash();
 
             }
+
+            if (E_Type.EnemyTypes == EnemyType.State.Shotgun)
+            {
+                E_Type.CallShotgun();
+                EnemyState = State.idle;
+            }
+        }
+        else if(EnemyState == State.idle)
+        {
+
         }
     }
 }

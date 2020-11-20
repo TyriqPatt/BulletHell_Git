@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyType : MonoBehaviour
 {
 
-    public Transform eye;
+    public Transform eye, eye1, eye2;
     public GameObject Bullet;
+    EnemyMovement Movement;
     public int BulletsSpawned = 7;
     public float AltAmmo;
     public Rigidbody Rig;
@@ -19,25 +20,35 @@ public class EnemyType : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Rig = GetComponent<Rigidbody>();
+        Movement = GetComponentInParent<EnemyMovement>();
         if (EnemyTypes == State.DashSaw)
         {
             DashSawPart.SetActive(false);
         }
-        Rig = GetComponent<Rigidbody>();
-        for (int i = 0; i < BulletsSpawned; i++)
+        
+        if (EnemyTypes == State.Shotgun || EnemyTypes == State.BurstShot)
         {
-            GameObject objects = Instantiate(Bullet, this.transform.position, Quaternion.identity) as GameObject;
-            objects.transform.parent = this.transform;
-            objects.SetActive(false);
-            BulletList.Add(objects);
+            for (int i = 0; i < BulletsSpawned; i++)
+            {
+                GameObject objects = Instantiate(Bullet, this.transform.position, Quaternion.identity) as GameObject;
+                objects.transform.parent = this.transform;
+                objects.SetActive(false);
+                BulletList.Add(objects);
+            }
         }
-        StartCoroutine(DashSaw(3));
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void CallBurst()
+    {
+        StartCoroutine(Burst(3));
     }
 
     IEnumerator Burst(float timer)
@@ -57,6 +68,14 @@ public class EnemyType : MonoBehaviour
             }
             AltAmmo -= 1;
         }
+        yield return new WaitForSeconds(2);
+        CheckPlayerDis();
+        AltAmmo = 4;
+    }
+
+    public void CallShotgun()
+    {
+        StartCoroutine(Shotgun());
     }
 
     IEnumerator Shotgun()
@@ -68,12 +87,19 @@ public class EnemyType : MonoBehaviour
         BulletList[0].transform.rotation = eye.transform.rotation;
         BulletList[1].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Commander;
         BulletList[1].SetActive(true);
-        BulletList[1].transform.position = new Vector3(eye.transform.position.x +.5f, eye.transform.position.y, eye.transform.position.z);
-        BulletList[1].transform.rotation = new Quaternion(eye.transform.rotation.x - 45, eye.transform.rotation.y, eye.transform.rotation.y, eye.transform.rotation.w);
+        BulletList[1].transform.position = eye1.transform.position;
+        BulletList[1].transform.rotation = eye1.transform.rotation;
         BulletList[2].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Commander;
         BulletList[2].SetActive(true);
-        BulletList[2].transform.position = new Vector3(eye.transform.position.x - .5f, eye.transform.position.y, eye.transform.position.z);
-        BulletList[2].transform.rotation = new Quaternion(eye.transform.rotation.x + 45, eye.transform.rotation.y, eye.transform.rotation.y, eye.transform.rotation.w);
+        BulletList[2].transform.position = eye2.transform.position;
+        BulletList[2].transform.rotation = eye2.transform.rotation;
+        yield return new WaitForSeconds(2);
+        CheckPlayerDis();
+    }
+
+    public void CallDash()
+    {
+        StartCoroutine(DashSaw(3));
     }
 
     IEnumerator DashSaw(float timer)
@@ -95,5 +121,18 @@ public class EnemyType : MonoBehaviour
         Rig.velocity = Vector3.zero;
         yield return new WaitForSeconds(.08f);
         DashSawPart.SetActive(false);
+    }
+
+
+    void CheckPlayerDis()
+    {
+        if (Movement.distance > Movement.AttackRange)
+        {
+            Movement.EnemyState = EnemyMovement.State.move;
+        }
+        else
+        {
+            Movement.EnemyState = EnemyMovement.State.attack;
+        }
     }
 }
