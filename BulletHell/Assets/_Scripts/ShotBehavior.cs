@@ -7,7 +7,7 @@ public class ShotBehavior : MonoBehaviour {
     public float Lifetime;
     float LifeCounter;
     public JR_EnemyHealth Enemy_HP;
-    public enum State { Tank, Commander, Scout }
+    public enum State { Tank, Commander, Scout, Enemy }
 
     public State ClassState;
 

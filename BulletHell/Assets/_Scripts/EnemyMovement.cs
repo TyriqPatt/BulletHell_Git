@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public float AttackRange;
     public float distance;
     public float speed;
+    public bool CanRot;
     Vector3 smoothpos;
     public EnemyType E_Type;
 
@@ -29,20 +30,25 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        Self.transform.LookAt(player);
+        if (CanRot)
+        {
+            //Self.transform.LookAt(player);
+            Vector3 targetDirection = player.transform.position - Self.transform.position;
+            Vector3 newDirection = Vector3.RotateTowards(Self.transform.forward, targetDirection, 2 * Time.deltaTime, 0.0f);
+            Self.transform.rotation = Quaternion.LookRotation(newDirection);
+        }
+        
         distance = Vector3.Distance(Self.transform.position, player.position);
         if (EnemyState == State.move)
         {
             if (distance > AttackRange)
             {
-                    Self.transform.Translate(Vector3.forward * speed * Time.deltaTime);
+                Self.transform.Translate(Vector3.forward * speed * Time.deltaTime);
             }
             else
             {
-                
                 EnemyState = State.attack;
-
-            }
+            } 
         }
         else if(EnemyState == State.attack)
         {
@@ -55,6 +61,7 @@ public class EnemyMovement : MonoBehaviour
             if (E_Type.EnemyTypes == EnemyType.State.DashSaw)
             {
                 E_Type.CallDash();
+                EnemyState = State.idle;
 
             }
 

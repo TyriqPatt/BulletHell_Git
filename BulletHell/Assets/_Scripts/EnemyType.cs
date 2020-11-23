@@ -10,6 +10,7 @@ public class EnemyType : MonoBehaviour
     EnemyMovement Movement;
     public int BulletsSpawned = 7;
     public float AltAmmo;
+    public int i = 0;
     public Rigidbody Rig;
     public List<GameObject> BulletList = new List<GameObject>();
     public GameObject DashSawPart;
@@ -22,6 +23,7 @@ public class EnemyType : MonoBehaviour
     {
         Rig = GetComponent<Rigidbody>();
         Movement = GetComponentInParent<EnemyMovement>();
+        Movement.CanRot = true;
         if (EnemyTypes == State.DashSaw)
         {
             DashSawPart.SetActive(false);
@@ -32,7 +34,7 @@ public class EnemyType : MonoBehaviour
             for (int i = 0; i < BulletsSpawned; i++)
             {
                 GameObject objects = Instantiate(Bullet, this.transform.position, Quaternion.identity) as GameObject;
-                objects.transform.parent = this.transform;
+                objects.transform.parent = transform.parent;
                 objects.SetActive(false);
                 BulletList.Add(objects);
             }
@@ -48,15 +50,17 @@ public class EnemyType : MonoBehaviour
 
     public void CallBurst()
     {
-        StartCoroutine(Burst(3));
+        StartCoroutine(Burst(1));
+        i = 0;
+        AltAmmo = 4;
     }
 
     IEnumerator Burst(float timer)
     {
-        int i = 0;
+        
         i += 1;
         yield return new WaitForSeconds(timer);
-        BulletList[i].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Commander;
+        BulletList[i].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Enemy;
         BulletList[i].SetActive(true);
         BulletList[i].transform.position = eye.transform.position;
         BulletList[i].transform.rotation = eye.transform.rotation;
@@ -68,9 +72,15 @@ public class EnemyType : MonoBehaviour
             }
             AltAmmo -= 1;
         }
-        yield return new WaitForSeconds(2);
-        CheckPlayerDis();
-        AltAmmo = 4;
+        StartCoroutine(BurstWait());
+    }
+    IEnumerator BurstWait()
+    {
+        if (AltAmmo == 0)
+        {
+            yield return new WaitForSeconds(2);
+            CheckPlayerDis();
+        }
     }
 
     public void CallShotgun()
@@ -81,15 +91,15 @@ public class EnemyType : MonoBehaviour
     IEnumerator Shotgun()
     {
         yield return new WaitForSeconds(1);
-        BulletList[0].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Commander;
+        BulletList[0].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Enemy;
         BulletList[0].SetActive(true);
         BulletList[0].transform.position = eye.transform.position;
         BulletList[0].transform.rotation = eye.transform.rotation;
-        BulletList[1].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Commander;
+        BulletList[1].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Enemy;
         BulletList[1].SetActive(true);
         BulletList[1].transform.position = eye1.transform.position;
         BulletList[1].transform.rotation = eye1.transform.rotation;
-        BulletList[2].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Commander;
+        BulletList[2].GetComponent<ShotBehavior>().ClassState = ShotBehavior.State.Enemy;
         BulletList[2].SetActive(true);
         BulletList[2].transform.position = eye2.transform.position;
         BulletList[2].transform.rotation = eye2.transform.rotation;
@@ -99,28 +109,22 @@ public class EnemyType : MonoBehaviour
 
     public void CallDash()
     {
-        StartCoroutine(DashSaw(3));
+        StartCoroutine(DashSaw(.5f));
     }
 
     IEnumerator DashSaw(float timer)
     {
         yield return new WaitForSeconds(timer);
+        Movement.CanRot = false;
         Rig.velocity = transform.forward * 40;
         DashSawPart.SetActive(true);
-        yield return new WaitForSeconds(.15f);
-        Rig.velocity = Vector3.zero;
-        yield return new WaitForSeconds(.08f);
-
-        Rig.velocity = transform.forward * 40;
-        yield return new WaitForSeconds(.15f);
-        Rig.velocity = Vector3.zero;
-        yield return new WaitForSeconds(.08f);
-
-        Rig.velocity = transform.forward * 40;
-        yield return new WaitForSeconds(.15f);
+        yield return new WaitForSeconds(.5f);
         Rig.velocity = Vector3.zero;
         yield return new WaitForSeconds(.08f);
         DashSawPart.SetActive(false);
+        yield return new WaitForSeconds(1);
+        Movement.CanRot = true;
+        CheckPlayerDis();
     }
 
 
