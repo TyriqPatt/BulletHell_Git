@@ -120,6 +120,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &45366029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 72fd38d3d1566e74b8726177e8de153f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1140055032}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &45366033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45366029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04ff9d98e219ca34591db784aa8d4f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 1267501369}
+  speed: 5
+  pingpong: 0
+  pingpongL: 0
+  pingpongR: 0
+  RandSpeed: 0
 --- !u!1 &96811272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5779,12 +5803,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1970449231352106, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 102281164, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
       propertyPath: TankMelee
       value: 
       objectReference: {fileID: 1523547167}
+    - target: {fileID: 1641970348650261, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976897783259598338, guid: 9f1c1bc861c11b34990f6f8cc317c20f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
 --- !u!1 &918947499
@@ -5901,7 +5934,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 72fd38d3d1566e74b8726177e8de153f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 72fd38d3d1566e74b8726177e8de153f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10852,6 +10885,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247949078}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1267501369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 853336627781201724, guid: 998afc01e947c4d4295bd9f946935c1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 853336627005184229}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1305320585
 GameObject:
   m_ObjectHideFlags: 0
@@ -21226,7 +21265,7 @@ PrefabInstance:
     - target: {fileID: 853336627781201724, guid: 998afc01e947c4d4295bd9f946935c1b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0451941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 853336627781201724, guid: 998afc01e947c4d4295bd9f946935c1b,
         type: 3}
