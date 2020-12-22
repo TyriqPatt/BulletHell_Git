@@ -19,7 +19,7 @@ public class Spawner_Enemies : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable() 
     {
         if (EnemyType == State.TheBurst)
         {
@@ -52,11 +52,23 @@ public class Spawner_Enemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            SpawnEnemies(3);  
+        }
     }
 
-    public void SpawnEnemies(State enemytype)
+    public void SpawnEnemies(int amount)
     {
-        //EnemyType == enemytype;  
+
+        for (int i = 0; i < amount; i++)
+        {
+            GameObject SelectedEnemy = EnemyArray[i];
+            SelectedEnemy.SetActive(true); 
+        }
+
+
     }
+
+
 }
