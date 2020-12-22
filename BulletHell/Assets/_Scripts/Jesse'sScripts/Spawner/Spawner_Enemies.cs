@@ -59,18 +59,15 @@ public class Spawner_Enemies : MonoBehaviour
     }
 
     public void SpawnEnemies(int amount)
-    {
-
-        for (int i = 0; i < EnemyArray.Length; i++)
-        {
-            if (!EnemyArray[i].activeInHierarchy)
+    {     
+            for (int i = 0; i < EnemyArray.Length; i++)
             {
-                GameObject SelectedEnemy = EnemyArray[i];
-                SelectedEnemy.SetActive(true);
+                if (!EnemyArray[i].activeInHierarchy)
+                {
+                    GameObject SelectedEnemy = EnemyArray[i];
+                    SelectedEnemy.SetActive(true);
+                }
+
             }
-
-        }
-
     }
-
 }
