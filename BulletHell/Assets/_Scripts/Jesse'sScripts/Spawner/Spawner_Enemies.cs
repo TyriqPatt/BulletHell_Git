@@ -42,7 +42,7 @@ public class Spawner_Enemies : MonoBehaviour
 
         }
 
-
+        SpawnEnemies(1);
 
 
 
@@ -54,7 +54,7 @@ public class Spawner_Enemies : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            SpawnEnemies(1); 
+             
         }
     }
 

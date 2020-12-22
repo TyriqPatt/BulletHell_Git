@@ -8,10 +8,10 @@ public class AddRooms : MonoBehaviour
 
     RoomTemplates templates;
     public Transform RayPoint;
-    bool FDeadend;
-    bool RDeadend;
-    bool LDeadend;
-    bool BDeadend;
+    public bool FDeadend;
+    public bool RDeadend;
+    public bool LDeadend;
+    public bool BDeadend;
     public GameObject FD;
     public GameObject RD;
     public GameObject LD;
@@ -19,6 +19,7 @@ public class AddRooms : MonoBehaviour
     public GameObject MMObject;
     public Image MMBackGround;
     public int NumInlist;
+    public Spawner_Enemies Spawner;
     //BoxCollider BC;
     //public Vector3 BCSize;
 
@@ -60,12 +61,12 @@ public class AddRooms : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            CloseDoor();
+            wallup();
         }
 
         if (Input.GetKeyDown(KeyCode.K))
         {
-            
+            OpenDoors();
         }
     }
 
@@ -95,19 +96,19 @@ public class AddRooms : MonoBehaviour
 
     public void OpenDoors()
     {
-        if (FD != null && !FD.activeSelf)
+        if (FD != null && FD.GetComponent<Renderer>().material.color == Color.red)
         {
             FD.SetActive(false);
         }
-        if (RD != null && !RD.activeSelf)
+        if (RD != null && RD.GetComponent<Renderer>().material.color == Color.red)
         {
             RD.SetActive(false);
         }
-        if (BD != null && !BD.activeSelf)
+        if (BD != null && BD.GetComponent<Renderer>().material.color == Color.red)
         {
             BD.SetActive(false);
         }
-        if (LD != null && !LD.activeSelf)
+        if (LD != null && LD.GetComponent<Renderer>().material.color == Color.red)
         {
             LD.SetActive(false);
         }
@@ -125,6 +126,7 @@ public class AddRooms : MonoBehaviour
         if (hit.distance > 37.125 && hit.distance < 40 && hit.transform.name == "Wall")
         {
             FDeadend = true;
+            Debug.Log("hit");
         }
 
         RaycastHit hit2;
@@ -175,6 +177,8 @@ public class AddRooms : MonoBehaviour
         {
             MMObject.SetActive(true);
             MMBackGround.color = Color.red;
+            //Spawner.SpawnEnemies(1);
+            //CloseDoor();
         }
     }
 
