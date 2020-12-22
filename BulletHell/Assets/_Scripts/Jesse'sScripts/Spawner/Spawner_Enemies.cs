@@ -19,7 +19,7 @@ public class Spawner_Enemies : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void OnEnable() 
+    void OnEnable()
     {
         if (EnemyType == State.TheBurst)
         {
@@ -27,10 +27,10 @@ public class Spawner_Enemies : MonoBehaviour
             for (int i = 0; i < numSelectors; i++)
             {
                 GameObject BurstEnemy = Instantiate(TheBurst, new Vector3((float)i, 1, 0), Quaternion.identity) as GameObject;
-                BurstEnemy.transform.localScale = Vector3.one;
+                //BurstEnemy.transform.localScale = Vector3.one;
                 EnemyArray[i] = BurstEnemy;
-                BurstEnemy.SetActive(false); 
-                
+                BurstEnemy.SetActive(false);
+
             }
         }
         else if (EnemyType == State.TheBuzzSaw)
@@ -52,22 +52,32 @@ public class Spawner_Enemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            SpawnEnemies(3);  
+            SpawnEnemies(1); 
         }
     }
 
     public void SpawnEnemies(int amount)
-    {     
-            for (int i = 0; i < EnemyArray.Length; i++)
+    {
+        int HowManyEnemies = 0;
+
+        for (int i = 0; i < EnemyArray.Length; i++)
+        {
+            if (HowManyEnemies < amount)
             {
                 if (!EnemyArray[i].activeInHierarchy)
                 {
                     GameObject SelectedEnemy = EnemyArray[i];
                     SelectedEnemy.SetActive(true);
+                    HowManyEnemies += 1;
                 }
-
             }
+            else
+            {
+                HowManyEnemies = 0;
+                break; 
+            }
+        }
     }
 }
