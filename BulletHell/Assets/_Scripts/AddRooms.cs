@@ -56,6 +56,63 @@ public class AddRooms : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            CloseDoor();
+        }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            
+        }
+    }
+
+    public void CloseDoor()
+    {
+        if(FD != null && !FD.activeSelf)
+        {
+            FD.SetActive(true);
+            FD.GetComponent<Renderer>().material.color = Color.red;
+        }
+        if (RD != null && !RD.activeSelf)
+        {
+            RD.SetActive(true);
+            RD.GetComponent<Renderer>().material.color = Color.red;
+        }
+        if (BD != null && !BD.activeSelf)
+        {
+            BD.SetActive(true);
+            BD.GetComponent<Renderer>().material.color = Color.red;
+        }
+        if (LD != null && !LD.activeSelf)
+        {
+            LD.SetActive(true);
+            LD.GetComponent<Renderer>().material.color = Color.red;
+        }
+    }
+
+    public void OpenDoors()
+    {
+        if (FD != null && !FD.activeSelf)
+        {
+            FD.SetActive(false);
+        }
+        if (RD != null && !RD.activeSelf)
+        {
+            RD.SetActive(false);
+        }
+        if (BD != null && !BD.activeSelf)
+        {
+            BD.SetActive(false);
+        }
+        if (LD != null && !LD.activeSelf)
+        {
+            LD.SetActive(false);
+        }
+    }
+
 
     public void WallDectection()
     {
