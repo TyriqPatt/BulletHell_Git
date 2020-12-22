@@ -7,6 +7,10 @@ public class AddRooms : MonoBehaviour
 {
 
     RoomTemplates templates;
+    public float fhit;
+    public float bhit;
+    public float rhit;
+    public float lhit;
     public Transform RayPoint;
     public bool FDeadend;
     public bool RDeadend;
@@ -26,6 +30,7 @@ public class AddRooms : MonoBehaviour
 
     private void Start()
     {
+        //wallup();
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
         templates.rooms.Add(this.gameObject);
         wallup();
@@ -59,10 +64,9 @@ public class AddRooms : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            wallup();
-        }
+       
+        
+        
 
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -122,8 +126,9 @@ public class AddRooms : MonoBehaviour
         if (Physics.Raycast(RayPoint.position, RayPoint.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
         {
             Debug.DrawRay(RayPoint.position, RayPoint.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            fhit = hit.distance;
         }
-        if (hit.distance > 37.125 && hit.distance < 40 && hit.transform.name == "Wall")
+        if (hit.distance >= 37.125 && hit.distance < 40 && hit.transform.name == "Wall")
         {
             FDeadend = true;
             Debug.Log("hit");
@@ -134,8 +139,9 @@ public class AddRooms : MonoBehaviour
         if (Physics.Raycast(RayPoint.position, RayPoint.TransformDirection(Vector3.back), out hit2, Mathf.Infinity))
         {
             Debug.DrawRay(RayPoint.position, RayPoint.TransformDirection(Vector3.back) * hit2.distance, Color.yellow);
+            bhit = hit2.distance;
         }
-        if (hit2.distance > 37.125 && hit2.distance < 40 && hit2.transform.name == "Wall")
+        if (hit2.distance >= 37.125 && hit2.distance < 40 && hit2.transform.name == "Wall")
         {
             BDeadend = true;
         }
@@ -145,8 +151,9 @@ public class AddRooms : MonoBehaviour
         if (Physics.Raycast(RayPoint.position, RayPoint.TransformDirection(Vector3.right), out hit3, Mathf.Infinity))
         {
             Debug.DrawRay(RayPoint.position, RayPoint.TransformDirection(Vector3.right) * hit3.distance, Color.yellow);
+            rhit = hit3.distance;
         }
-        if (hit3.distance > 67.125 && hit3.distance < 70 && hit3.transform.name == "Wall")
+        if (hit3.distance >= 67.125 && hit3.distance < 70 && hit3.transform.name == "Wall")
         {
             RDeadend = true;
         }
@@ -156,8 +163,9 @@ public class AddRooms : MonoBehaviour
         if (Physics.Raycast(RayPoint.position, RayPoint.TransformDirection(Vector3.left), out hit4, Mathf.Infinity))
         {
             Debug.DrawRay(RayPoint.position, RayPoint.TransformDirection(Vector3.left) * hit4.distance, Color.yellow);
+            lhit = hit4.distance;
         }
-        if (hit4.distance > 67.125 && hit4.distance < 70 && hit4.transform.name == "Wall")
+        if (hit4.distance >= 67.125 && hit4.distance < 70 && hit4.transform.name == "Wall")
         {
             LDeadend = true;
         }

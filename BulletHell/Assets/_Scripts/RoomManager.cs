@@ -15,11 +15,13 @@ public class RoomManager : MonoBehaviour
     int rand;
     public GameObject DeadEnd;
     public float waitTime = 4;
+    public AddRooms Myroom;
 
     private void Start()
     {
         //Destroy(gameObject, waitTime);
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+        Myroom = GetComponentInParent<AddRooms>();
         StartCoroutine(SpawnRooms());
     }
 
@@ -67,6 +69,7 @@ public class RoomManager : MonoBehaviour
             StopAllCoroutines();
             gameObject.SetActive(false);
             templates.CheckList();
+            //Myroom.wallup();
         }
         else
         {

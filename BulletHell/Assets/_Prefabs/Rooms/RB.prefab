@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 2128219805466829281}
   - component: {fileID: -1521862565854430858}
   - component: {fileID: 572274706393411266}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RB
   m_TagString: EnterRoom
   m_Icon: {fileID: 0}
@@ -949,7 +949,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab19dc4b0b951b7499c12e2b58d20dd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fhit: 0
+  bhit: 0
+  rhit: 0
+  lhit: 0
   RayPoint: {fileID: 8218581930553953143}
+  FDeadend: 0
+  RDeadend: 0
+  LDeadend: 0
+  BDeadend: 0
   FD: {fileID: 0}
   RD: {fileID: 4580890515061504982}
   LD: {fileID: 0}
@@ -957,6 +965,7 @@ MonoBehaviour:
   MMObject: {fileID: 2915216944649587296}
   MMBackGround: {fileID: 7516779147484457252}
   NumInlist: 0
+  Spawner: {fileID: 0}
 --- !u!65 &572274706393411266
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1094,6 +1103,7 @@ MonoBehaviour:
   openingDirection: 3
   DeadEnd: {fileID: 4580890515061504982}
   waitTime: 4
+  Myroom: {fileID: 0}
 --- !u!1 &2128219806007697561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,6 +1319,7 @@ MonoBehaviour:
   openingDirection: 2
   DeadEnd: {fileID: 4116099380352978431}
   waitTime: 4
+  Myroom: {fileID: 0}
 --- !u!1 &2915216944649587296
 GameObject:
   m_ObjectHideFlags: 0
