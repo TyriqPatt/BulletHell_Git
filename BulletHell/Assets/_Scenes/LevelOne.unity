@@ -5423,10 +5423,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 139242415, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
-      propertyPath: ClassState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1641970348650263, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
       propertyPath: Hearts.Array.data[0]
       value: 
