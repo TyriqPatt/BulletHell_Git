@@ -5,47 +5,16 @@ using UnityEngine;
 public class Spawner_Enemies : MonoBehaviour
 {
 
-
-    public GameObject TheBurst;
-    public GameObject TheBuzzSaw;
-    public GameObject TheDashSaw;
-
-    public enum State { TheBurst, TheBuzzSaw, ThDashSaw }
-
-    public State EnemyType;
-
-    public GameObject[] EnemyArray;
-    public int numSelectors = 5;
+    public GameObject[] Enemies;
+    public GameObject[] Spawners;
+    public int rand;
+    public AddRooms parentRoom;
 
 
     // Start is called before the first frame update
-    void OnEnable()
+    void Start()
     {
-        if (EnemyType == State.TheBurst)
-        {
-            EnemyArray = new GameObject[numSelectors];
-            for (int i = 0; i < numSelectors; i++)
-            {
-                GameObject BurstEnemy = Instantiate(TheBurst, new Vector3((float)i, 1, 0), Quaternion.identity) as GameObject;
-                //BurstEnemy.transform.localScale = Vector3.one;
-                EnemyArray[i] = BurstEnemy;
-                BurstEnemy.SetActive(false);
-
-            }
-        }
-        else if (EnemyType == State.TheBuzzSaw)
-        {
-
-        }
-        else if (EnemyType == State.ThDashSaw)
-        {
-
-        }
-
-        SpawnEnemies(1);
-
-
-
+       
     }
 
 
@@ -58,26 +27,117 @@ public class Spawner_Enemies : MonoBehaviour
         }
     }
 
-    public void SpawnEnemies(int amount)
+    public void spawnWave()
     {
-        int HowManyEnemies = 0;
+        Spawner1();
+        Spawner2();
+        Spawner3();
+        Spawner4();
+        Spawner5();
+    }
 
-        for (int i = 0; i < EnemyArray.Length; i++)
+    void Spawner1()
+    {
+        rand = Random.Range(0, 4);
+        if (rand == 0)
         {
-            if (HowManyEnemies < amount)
-            {
-                if (!EnemyArray[i].activeInHierarchy)
-                {
-                    GameObject SelectedEnemy = EnemyArray[i];
-                    SelectedEnemy.SetActive(true);
-                    HowManyEnemies += 1;
-                }
-            }
-            else
-            {
-                HowManyEnemies = 0;
-                break; 
-            }
+            Instantiate(Enemies[0], Spawners[0].transform.position, transform.rotation);
+        }
+        else if (rand == 1)
+        {
+            Instantiate(Enemies[1], Spawners[0].transform.position, transform.rotation);
+        }
+        else if (rand == 2)
+        {
+            Instantiate(Enemies[2], Spawners[0].transform.position, transform.rotation);
+        }
+        else if (rand == 3)
+        {
+            Instantiate(Enemies[3], Spawners[0].transform.position, transform.rotation);
+        }
+    }
+
+    void Spawner2()
+    {
+        rand = Random.Range(0, 4);
+        if (rand == 0)
+        {
+            Instantiate(Enemies[0], Spawners[1].transform.position, transform.rotation);
+        }
+        else if (rand == 1)
+        {
+            Instantiate(Enemies[1], Spawners[1].transform.position, transform.rotation);
+        }
+        else if (rand == 2)
+        {
+            Instantiate(Enemies[2], Spawners[1].transform.position, transform.rotation);
+        }
+        else if (rand == 3)
+        {
+            Instantiate(Enemies[3], Spawners[1].transform.position, transform.rotation);
+        }
+    }
+
+    void Spawner3()
+    {
+        rand = Random.Range(0, 4);
+        if (rand == 0)
+        {
+            Instantiate(Enemies[0], Spawners[2].transform.position, transform.rotation);
+        }
+        else if (rand == 1)
+        {
+            Instantiate(Enemies[1], Spawners[2].transform.position, transform.rotation);
+        }
+        else if (rand == 2)
+        {
+            Instantiate(Enemies[2], Spawners[2].transform.position, transform.rotation);
+        }
+        else if (rand == 3)
+        {
+            Instantiate(Enemies[3], Spawners[2].transform.position, transform.rotation);
+        }
+    }
+
+    void Spawner4()
+    {
+        rand = Random.Range(0, 4);
+        if (rand == 0)
+        {
+            Instantiate(Enemies[0], Spawners[3].transform.position, transform.rotation);
+        }
+        else if (rand == 1)
+        {
+            Instantiate(Enemies[1], Spawners[3].transform.position, transform.rotation);
+        }
+        else if (rand == 2)
+        {
+            Instantiate(Enemies[2], Spawners[3].transform.position, transform.rotation);
+        }
+        else if (rand == 3)
+        {
+            Instantiate(Enemies[3], Spawners[3].transform.position, transform.rotation);
+        }
+    }
+
+    void Spawner5()
+    {
+        rand = Random.Range(0, 4);
+        if (rand == 0)
+        {
+            Instantiate(Enemies[0], Spawners[4].transform.position, transform.rotation);
+        }
+        else if (rand == 1)
+        {
+            Instantiate(Enemies[1], Spawners[4].transform.position, transform.rotation);
+        }
+        else if (rand == 2)
+        {
+            Instantiate(Enemies[2], Spawners[4].transform.position, transform.rotation);
+        }
+        else if (rand == 3)
+        {
+            Instantiate(Enemies[3], Spawners[4].transform.position, transform.rotation);
         }
     }
 }

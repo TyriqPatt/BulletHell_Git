@@ -12,7 +12,6 @@ public class RoomTemplates : MonoBehaviour
     public float RoomLimit;
     public List<GameObject> rooms;
 
-    
     bool spawnedBoss;
     GameObject Boss;
     public static bool DoneSpawning;

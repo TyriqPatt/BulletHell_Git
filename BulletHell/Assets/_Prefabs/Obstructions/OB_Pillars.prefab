@@ -377,6 +377,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2308062426485498652}
   - component: {fileID: 7487937628212487190}
+  - component: {fileID: 4161771625768648930}
+  - component: {fileID: 569787710551568519}
   m_Layer: 0
   m_Name: SpawnHolder
   m_TagString: Untagged
@@ -415,12 +417,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb8ff093560561429fd5ee2e21ef6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheBurst: {fileID: 0}
-  TheBuzzSaw: {fileID: 0}
-  TheDashSaw: {fileID: 0}
-  EnemyType: 0
-  EnemyArray: []
-  numSelectors: 5
+  Enemies:
+  - {fileID: 6439790981292027285, guid: 5357e12e986cb304daa82fcd03340fad, type: 3}
+  - {fileID: 8106613678833469127, guid: 281c56e94d8c5014fbb8ce9b450b098a, type: 3}
+  - {fileID: 2982324934140960689, guid: ef663a72ee2b5ca459c0f20a836dc551, type: 3}
+  - {fileID: 4680644344375997412, guid: 06b935541680c9b46b5140ccfe065a0e, type: 3}
+  Spawners:
+  - {fileID: 175190292657710390}
+  - {fileID: 6248055979894459962}
+  - {fileID: 6261520313603972084}
+  - {fileID: 7671020634133633118}
+  - {fileID: 2353950172489772438}
+  rand: 0
+  parentRoom: {fileID: 0}
+--- !u!54 &4161771625768648930
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6236755812654177559}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &569787710551568519
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6236755812654177559}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6248055979894459962
 GameObject:
   m_ObjectHideFlags: 0

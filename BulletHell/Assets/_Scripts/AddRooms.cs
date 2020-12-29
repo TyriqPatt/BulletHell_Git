@@ -64,9 +64,6 @@ public class AddRooms : MonoBehaviour
 
     private void Update()
     {
-       
-        
-        
 
         if (Input.GetKeyDown(KeyCode.K))
         {
@@ -185,7 +182,7 @@ public class AddRooms : MonoBehaviour
         {
             MMObject.SetActive(true);
             MMBackGround.color = Color.red;
-            //Spawner.SpawnEnemies(1);
+            Spawner.spawnWave();
             //CloseDoor();
         }
     }
