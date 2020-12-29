@@ -2024,8 +2024,8 @@ MonoBehaviour:
   DashAbility: {fileID: 0}
   Movement: {fileID: 0}
   CommanderClass: {fileID: 3976897783259598338}
-  TankClass: {fileID: 1641970348650261}
-  ScoutClass: {fileID: 1970449231352106}
+  TankClass: {fileID: 1970449231352106}
+  ScoutClass: {fileID: 1641970348650261}
   ClassState: 0
 --- !u!114 &3976897783772286854
 MonoBehaviour:

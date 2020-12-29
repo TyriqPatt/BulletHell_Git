@@ -5423,14 +5423,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 139242415, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
-      propertyPath: ScoutClass
-      value: 
-      objectReference: {fileID: 866862138}
-    - target: {fileID: 139242415, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
-      propertyPath: TankClass
-      value: 
-      objectReference: {fileID: 866862137}
     - target: {fileID: 1641970348650263, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
       propertyPath: Hearts.Array.data[0]
       value: 
@@ -5563,18 +5555,6 @@ PrefabInstance:
       objectReference: {fileID: 2011754902}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f1c1bc861c11b34990f6f8cc317c20f, type: 3}
---- !u!1 &866862137 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1970449231352106, guid: 9f1c1bc861c11b34990f6f8cc317c20f,
-    type: 3}
-  m_PrefabInstance: {fileID: 866862136}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &866862138 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1641970348650261, guid: 9f1c1bc861c11b34990f6f8cc317c20f,
-    type: 3}
-  m_PrefabInstance: {fileID: 866862136}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &958874466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3976897783673031770, guid: 9f1c1bc861c11b34990f6f8cc317c20f,
