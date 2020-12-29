@@ -7,7 +7,7 @@ public class Spawner_Enemies : MonoBehaviour
 
     public GameObject[] Enemies;
     public GameObject[] Spawners;
-    public int rand;
+    
     public AddRooms parentRoom;
 
 
@@ -34,10 +34,12 @@ public class Spawner_Enemies : MonoBehaviour
         Spawner3();
         Spawner4();
         Spawner5();
+        this.enabled = false;
     }
 
     void Spawner1()
     {
+        int rand;
         rand = Random.Range(0, 4);
         if (rand == 0)
         {
@@ -59,6 +61,7 @@ public class Spawner_Enemies : MonoBehaviour
 
     void Spawner2()
     {
+        int rand;
         rand = Random.Range(0, 4);
         if (rand == 0)
         {
@@ -80,6 +83,7 @@ public class Spawner_Enemies : MonoBehaviour
 
     void Spawner3()
     {
+        int rand;
         rand = Random.Range(0, 4);
         if (rand == 0)
         {
@@ -101,6 +105,7 @@ public class Spawner_Enemies : MonoBehaviour
 
     void Spawner4()
     {
+        int rand;
         rand = Random.Range(0, 4);
         if (rand == 0)
         {
@@ -122,6 +127,7 @@ public class Spawner_Enemies : MonoBehaviour
 
     void Spawner5()
     {
+        int rand;
         rand = Random.Range(0, 4);
         if (rand == 0)
         {
