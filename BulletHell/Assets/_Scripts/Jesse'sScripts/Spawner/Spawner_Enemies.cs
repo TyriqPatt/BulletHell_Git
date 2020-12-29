@@ -17,11 +17,10 @@ public class Spawner_Enemies : MonoBehaviour
     public GameObject[] EnemyArray;
     public int numSelectors = 5;
 
-    SpawnerManager _spawnerManager; 
+
     // Start is called before the first frame update
     void OnEnable()
     {
-        _spawnerManager = GetComponent<SpawnerManager>(); 
         if (EnemyType == State.TheBurst)
         {
             EnemyArray = new GameObject[numSelectors];
@@ -43,7 +42,7 @@ public class Spawner_Enemies : MonoBehaviour
 
         }
 
-        SpawnEnemies(_spawnerManager.BurstEnemies);
+        SpawnEnemies(1);
 
 
 
