@@ -9,7 +9,8 @@ public class SpawnerManager : MonoBehaviour
     public int DashSawEnemies;
 
 
-    public GameObject[] SpawnerArray;  
+    public GameObject[] SpawnerArray; 
+    
     // Start is called before the first frame update
     void Start()
     {
