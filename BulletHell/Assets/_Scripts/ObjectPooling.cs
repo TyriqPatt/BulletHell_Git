@@ -26,6 +26,10 @@ public class ObjectPooling : MonoBehaviour
     public GameObject TSImpact;
     public GameObject CImpact;
     public GameObject CHolo;
+    public GameObject DashEnemy;
+    public GameObject BuzzEnemy;
+    public GameObject BurstEnemy;
+    public GameObject ShotgunEnemy;
     //Hold player bullets
     public GameObject BulletContainer;
     public GameObject ImpactContainer;
@@ -33,6 +37,10 @@ public class ObjectPooling : MonoBehaviour
     public GameObject TSImpactContainer;
     public GameObject CImpactContainer;
     public GameObject CHoloContainer;
+    public GameObject DashEnemyContainer;
+    public GameObject BuzzEnemyContainer;
+    public GameObject BurstEnemyContainer;
+    public GameObject ShotgunEnemyContainer;
     //initial amount of objects spawned 
     public int ObjectsSpawned = 10;
     //List to hold pooled objects
@@ -42,6 +50,10 @@ public class ObjectPooling : MonoBehaviour
     public List<GameObject> TSImpactList = new List<GameObject>();
     public List<GameObject> CImpactList = new List<GameObject>();
     public List<GameObject> CHoloList = new List<GameObject>();
+    public List<GameObject> DashEnemList = new List<GameObject>();
+    public List<GameObject> BuzzEnemList = new List<GameObject>();
+    public List<GameObject> BurstEnemList = new List<GameObject>();
+    public List<GameObject> ShotgunEnemList = new List<GameObject>();
 
     private void Awake()
     {
@@ -97,6 +109,38 @@ public class ObjectPooling : MonoBehaviour
             objects.transform.parent = CHoloContainer.transform;
             objects.SetActive(false);
             CHoloList.Add(objects);
+        }
+
+        for (int i = 0; i < ObjectsSpawned; i++)
+        {
+            GameObject objects = Instantiate(DashEnemy, Vector3.zero, Quaternion.identity) as GameObject;
+            objects.transform.parent = DashEnemyContainer.transform;
+            objects.SetActive(false);
+            DashEnemList.Add(objects);
+        }
+
+        for (int i = 0; i < ObjectsSpawned; i++)
+        {
+            GameObject objects = Instantiate(BuzzEnemy, Vector3.zero, Quaternion.identity) as GameObject;
+            objects.transform.parent = BuzzEnemyContainer.transform;
+            objects.SetActive(false);
+            BuzzEnemList.Add(objects);
+        }
+
+        for (int i = 0; i < ObjectsSpawned; i++)
+        {
+            GameObject objects = Instantiate(BurstEnemy, Vector3.zero, Quaternion.identity) as GameObject;
+            objects.transform.parent = BurstEnemyContainer.transform;
+            objects.SetActive(false);
+            BurstEnemList.Add(objects);
+        }
+
+        for (int i = 0; i < ObjectsSpawned; i++)
+        {
+            GameObject objects = Instantiate(ShotgunEnemy, Vector3.zero, Quaternion.identity) as GameObject;
+            objects.transform.parent = ShotgunEnemyContainer.transform;
+            objects.SetActive(false);
+            ShotgunEnemList.Add(objects);
         }
     }
 }

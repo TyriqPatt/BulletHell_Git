@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &318775347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 318775348}
+  m_Layer: 0
+  m_Name: ShotgunEnemyHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &318775348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318775347}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5696109313265330102}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &463294227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463294228}
+  m_Layer: 0
+  m_Name: BuzzEnemyHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463294228
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463294227}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5696109313265330102}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &470270670
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,6 +150,36 @@ Transform:
   m_Father: {fileID: 5696109313265330102}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1084025041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1084025042}
+  m_Layer: 0
+  m_Name: BurstEnemyHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1084025042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084025041}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5696109313265330102}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248883847
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +239,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5696109313265330102}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1322564472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1322564473}
+  m_Layer: 0
+  m_Name: DashEnemyHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1322564473
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322564472}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5696109313265330102}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2792918825618077542
 GameObject:
@@ -215,6 +335,10 @@ Transform:
   - {fileID: 470270671}
   - {fileID: 582556885}
   - {fileID: 1248883848}
+  - {fileID: 1322564473}
+  - {fileID: 463294228}
+  - {fileID: 1084025042}
+  - {fileID: 318775348}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -239,12 +363,24 @@ MonoBehaviour:
     type: 3}
   CImpact: {fileID: 7497413223749603851, guid: f298e02d8c6f36a4dad7bee8a89b2aa2, type: 3}
   CHolo: {fileID: 2174934167121525562, guid: 0e9cb7df19dcec0438939861e3ec7cdd, type: 3}
+  DashEnemy: {fileID: 2982324934140960689, guid: ef663a72ee2b5ca459c0f20a836dc551,
+    type: 3}
+  BuzzEnemy: {fileID: 8106613678833469127, guid: 281c56e94d8c5014fbb8ce9b450b098a,
+    type: 3}
+  BurstEnemy: {fileID: 6439790981292027285, guid: 5357e12e986cb304daa82fcd03340fad,
+    type: 3}
+  ShotgunEnemy: {fileID: 4680644344375997412, guid: 06b935541680c9b46b5140ccfe065a0e,
+    type: 3}
   BulletContainer: {fileID: 2792918825618077542}
   ImpactContainer: {fileID: 1322143060}
   TankShotContainer: {fileID: 580198412}
   TSImpactContainer: {fileID: 470270670}
   CImpactContainer: {fileID: 582556884}
   CHoloContainer: {fileID: 1248883847}
+  DashEnemyContainer: {fileID: 1322564472}
+  BuzzEnemyContainer: {fileID: 463294227}
+  BurstEnemyContainer: {fileID: 1084025041}
+  ShotgunEnemyContainer: {fileID: 318775347}
   ObjectsSpawned: 10
   ObjectList: []
   ImpactList: []
@@ -252,6 +388,10 @@ MonoBehaviour:
   TSImpactList: []
   CImpactList: []
   CHoloList: []
+  DashEnemList: []
+  BuzzEnemList: []
+  BurstEnemList: []
+  ShotgunEnemList: []
 --- !u!114 &1193890555
 MonoBehaviour:
   m_ObjectHideFlags: 0
