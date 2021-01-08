@@ -125,7 +125,7 @@ public class AddRooms : MonoBehaviour
             Debug.DrawRay(RayPoint.position, RayPoint.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             fhit = hit.distance;
         }
-        if (hit.distance >= 47.125 && hit.distance < 55 && hit.transform.name == "Wall")
+        if (hit.distance >= 50 && hit.distance < 55 && hit.transform.name == "Wall")
         {
             FDeadend = true;
             Debug.Log("hit");
@@ -138,7 +138,7 @@ public class AddRooms : MonoBehaviour
             Debug.DrawRay(RayPoint.position, RayPoint.TransformDirection(Vector3.back) * hit2.distance, Color.yellow);
             bhit = hit2.distance;
         }
-        if (hit2.distance >= 47.125 && hit2.distance < 55 && hit2.transform.name == "Wall")
+        if (hit2.distance >= 50 && hit2.distance < 55 && hit2.transform.name == "Wall")
         {
             BDeadend = true;
         }
@@ -150,7 +150,7 @@ public class AddRooms : MonoBehaviour
             Debug.DrawRay(RayPoint.position, RayPoint.TransformDirection(Vector3.right) * hit3.distance, Color.yellow);
             rhit = hit3.distance;
         }
-        if (hit3.distance >= 87.125 && hit3.distance < 95 && hit3.transform.name == "Wall")
+        if (hit3.distance >= 90 && hit3.distance < 95 && hit3.transform.name == "Wall")
         {
             RDeadend = true;
         }
@@ -162,7 +162,7 @@ public class AddRooms : MonoBehaviour
             Debug.DrawRay(RayPoint.position, RayPoint.TransformDirection(Vector3.left) * hit4.distance, Color.yellow);
             lhit = hit4.distance;
         }
-        if (hit4.distance >= 87.125 && hit4.distance < 95 && hit4.transform.name == "Wall")
+        if (hit4.distance >= 90 && hit4.distance < 95 && hit4.transform.name == "Wall")
         {
             LDeadend = true;
         }

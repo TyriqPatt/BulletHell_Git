@@ -29,19 +29,20 @@ public class Spawner_Enemies : MonoBehaviour
 
     public void spawnWave()
     {
-        Spawner1();
-        Spawner2();
-        Spawner3();
-        Spawner4();
-        Spawner5();
+        //Spawns a random enemy on all spawners at the same time
+        SpawnEnemiesOnce();
+        //Spawn random enemies over time on one spawner
+        SpawnEnemiesOverTime();
         this.enabled = false;
     }
 
-    void Spawner1()
+    public void SpawnEnemiesOnce()
     {
-        int rand;
-        rand = Random.Range(0, 4);
-        if (rand == 0)
+        //Selecting random enemy for spawner 0
+        int rand0;
+        rand0 = Random.Range(0, 4);
+        //placing randomly selected dash enemy at spawn 0 location
+        if (rand0 == 0)
         {
             for (int i = 0; i < ObjectPooling.Instance.DashEnemList.Count; i++)
             {
@@ -54,7 +55,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 1)
+        //placing randomly selected buzz enemy at spawn 0 location
+        else if (rand0 == 1)
         {
             for (int i = 0; i < ObjectPooling.Instance.BuzzEnemList.Count; i++)
             {
@@ -67,7 +69,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 2)
+        //placing randomly selected burst enemy at spawn 0 location
+        else if (rand0 == 2)
         {
             for (int i = 0; i < ObjectPooling.Instance.BurstEnemList.Count; i++)
             {
@@ -80,7 +83,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 3)
+        //placing randomly selected shotgun enemy at spawn 0 location
+        else if (rand0 == 3)
         {
             for (int i = 0; i < ObjectPooling.Instance.ShotgunEnemList.Count; i++)
             {
@@ -93,13 +97,12 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-    }
 
-    void Spawner2()
-    {
-        int rand;
-        rand = Random.Range(0, 4);
-        if (rand == 0)
+        //Selecting random enemy for spawner 1
+        int rand1;
+        rand1 = Random.Range(0, 4);
+        //placing randomly selected dash enemy at spawn 1 location
+        if (rand1 == 0)
         {
             for (int i = 0; i < ObjectPooling.Instance.DashEnemList.Count; i++)
             {
@@ -112,7 +115,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 1)
+        //placing randomly selected buzz enemy at spawn 1 location
+        else if (rand1 == 1)
         {
             for (int i = 0; i < ObjectPooling.Instance.BuzzEnemList.Count; i++)
             {
@@ -125,7 +129,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 2)
+        //placing randomly selected burst enemy at spawn 1 location
+        else if (rand1 == 2)
         {
             for (int i = 0; i < ObjectPooling.Instance.BurstEnemList.Count; i++)
             {
@@ -138,7 +143,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 3)
+        //placing randomly selected shotgun enemy at spawn 1 location
+        else if (rand1 == 3)
         {
             for (int i = 0; i < ObjectPooling.Instance.ShotgunEnemList.Count; i++)
             {
@@ -151,13 +157,12 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-    }
 
-    void Spawner3()
-    {
-        int rand;
-        rand = Random.Range(0, 4);
-        if (rand == 0)
+        //Selecting random enemy for spawner 2
+        int rand2;
+        rand2 = Random.Range(0, 4);
+        //placing randomly selected dash enemy at spawn 2 location
+        if (rand2 == 0)
         {
             for (int i = 0; i < ObjectPooling.Instance.DashEnemList.Count; i++)
             {
@@ -170,7 +175,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 1)
+        //placing randomly selected buzz enemy at spawn 2 location
+        else if (rand2 == 1)
         {
             for (int i = 0; i < ObjectPooling.Instance.BuzzEnemList.Count; i++)
             {
@@ -183,7 +189,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 2)
+        //placing randomly selected burst enemy at spawn 2 location
+        else if (rand2 == 2)
         {
             for (int i = 0; i < ObjectPooling.Instance.BurstEnemList.Count; i++)
             {
@@ -196,7 +203,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 3)
+        //placing randomly selected shotgun enemy at spawn 2 location
+        else if (rand2 == 3)
         {
             for (int i = 0; i < ObjectPooling.Instance.ShotgunEnemList.Count; i++)
             {
@@ -209,13 +217,12 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-    }
 
-    void Spawner4()
-    {
-        int rand;
-        rand = Random.Range(0, 4);
-        if (rand == 0)
+        //Selecting random enemy for spawner 3
+        int rand3;
+        rand3 = Random.Range(0, 4);
+        //placing randomly selected dash enemy at spawn 3 location
+        if (rand3 == 0)
         {
             for (int i = 0; i < ObjectPooling.Instance.DashEnemList.Count; i++)
             {
@@ -228,7 +235,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 1)
+        //placing randomly selected buzz enemy at spawn 3 location
+        else if (rand3 == 1)
         {
             for (int i = 0; i < ObjectPooling.Instance.BuzzEnemList.Count; i++)
             {
@@ -241,7 +249,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 2)
+        //placing randomly selected burst enemy at spawn 3 location
+        else if (rand3 == 2)
         {
             for (int i = 0; i < ObjectPooling.Instance.BurstEnemList.Count; i++)
             {
@@ -254,7 +263,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 3)
+        //placing randomly selected shotgun enemy at spawn 3 location
+        else if (rand3 == 3)
         {
             for (int i = 0; i < ObjectPooling.Instance.ShotgunEnemList.Count; i++)
             {
@@ -267,13 +277,12 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-    }
 
-    void Spawner5()
-    {
-        int rand;
-        rand = Random.Range(0, 4);
-        if (rand == 0)
+        //Selecting random enemy for spawner 4
+        int rand4;
+        rand4 = Random.Range(0, 4);
+        //placing randomly selected dash enemy at spawn 4 location
+        if (rand4 == 0)
         {
             for (int i = 0; i < ObjectPooling.Instance.DashEnemList.Count; i++)
             {
@@ -286,7 +295,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 1)
+        //placing randomly selected buzz enemy at spawn 4 location
+        else if (rand4 == 1)
         {
             for (int i = 0; i < ObjectPooling.Instance.BuzzEnemList.Count; i++)
             {
@@ -299,7 +309,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 2)
+        //placing randomly selected burst enemy at spawn 4 location
+        else if (rand4 == 2)
         {
             for (int i = 0; i < ObjectPooling.Instance.BurstEnemList.Count; i++)
             {
@@ -312,7 +323,8 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
-        else if (rand == 3)
+        //placing randomly selected shotgun enemy at spawn 4 location
+        else if (rand4 == 3)
         {
             for (int i = 0; i < ObjectPooling.Instance.ShotgunEnemList.Count; i++)
             {
@@ -325,5 +337,10 @@ public class Spawner_Enemies : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void SpawnEnemiesOverTime()
+    {
+
     }
 }
